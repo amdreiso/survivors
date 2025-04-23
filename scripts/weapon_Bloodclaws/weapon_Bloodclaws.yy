@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"weapon_Bloodclaws",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"weapon_Bloodclaws",
+  "parent":{
+    "name":"weapons",
+    "path":"folders/Scripts/weapons.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

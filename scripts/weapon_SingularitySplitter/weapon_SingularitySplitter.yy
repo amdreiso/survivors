@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"weapon_SingularitySplitter",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"weapon_SingularitySplitter",
+  "parent":{
+    "name":"weapons",
+    "path":"folders/Scripts/weapons.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

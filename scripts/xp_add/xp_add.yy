@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"xp_add",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"xp_add",
+  "parent":{
+    "name":"player",
+    "path":"folders/Scripts/player.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

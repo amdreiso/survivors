@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"granade_throw",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"granade_throw",
+  "parent":{
+    "name":"projectile",
+    "path":"folders/Scripts/projectile.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"char_akira",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"char_akira",
+  "parent":{
+    "name":"characters",
+    "path":"folders/Scripts/characters.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

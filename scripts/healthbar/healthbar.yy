@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"healthbar",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"healthbar",
+  "parent":{
+    "name":"draw",
+    "path":"folders/Scripts/draw.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

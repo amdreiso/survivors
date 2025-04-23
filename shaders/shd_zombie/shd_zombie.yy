@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shd_zombie",
+  "name":"shd_zombie",
+  "parent":{
+    "name":"Shaders",
+    "path":"folders/Shaders.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

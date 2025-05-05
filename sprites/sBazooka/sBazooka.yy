@@ -23,7 +23,7 @@
   ],
   "name":"sBazooka",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"John",
     "path":"folders/Sprites/weapons/John.yy",
@@ -77,7 +77,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":13,
+    "xorigin":-7,
     "yorigin":4,
   },
   "swatchColours":null,

@@ -16,6 +16,8 @@ xscale = 1;
 yscale = 1;
 scale = 1;
 
+image_angle = irandom(360);
+
 sprite = -1;
 getRandomSprite = false;
 

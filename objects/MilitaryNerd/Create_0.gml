@@ -2,8 +2,8 @@
 event_inherited();
 
 spriteState = {
-	idle: sEnemyNerd_Idle,
-	move: sEnemyNerd_Move,
+	idle: sMilitaryNerd_Idle,
+	move: sMilitaryNerd_Idle,
 };
 
 defaultSpd = 0.54;

@@ -17,6 +17,8 @@ damage = 1;
 onDestroy = function(obj){};
 destroyOnLastFrame = false;
 
+knockback = 0;
+
 handleDestroy = function() {
 	if (!destroy) return;
 	

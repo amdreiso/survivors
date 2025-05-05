@@ -65,11 +65,12 @@ restart = function() {
 	newHorde = true;
 	hordeEndCooldown = 120;
 	hordeEnemyMultiplier = 1.10;
-
+	
 	instance_destroy(Enemy);
 	instance_destroy(Drop);
 	instance_destroy(Coin);
 	instance_destroy(Particle);
+	instance_destroy(EnemyProjectile);
 	instance_destroy(Projectile);
 	instance_destroy(Hitmarker);
 	
@@ -78,5 +79,3 @@ restart = function() {
 restart();
 
 storedCoins = 0;
-
-

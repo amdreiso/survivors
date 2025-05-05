@@ -13,7 +13,7 @@ if (shoot) {
 	sprite_index = spriteState.idle;
 	fireCooldown += GameSpeed;
 	
-	if (fireCooldown >= 20) {
+	if (fireCooldown >= 10) {
 		var precision = random_range(-2.00, 2.00);
 		var dir = point_direction(x, y, Player.x, Player.y) + precision;
 		var proj = instance_create_depth(x, y - sprite_get_height(sprite_index) / 2, depth, EnemyProjectile);
@@ -24,12 +24,13 @@ if (shoot) {
 		proj.damage = 30;
 		proj.sprite = sProjectile_Pistol;
 		proj.image_angle = dir;
+		proj.spd = 2.5;
 		
 		fireCooldown = 0;
 		burstCount ++;
 	}
 	
-	if (burstCount >= 8) {
+	if (burstCount >= 3) {
 		shoot = false;
 		shootCooldown = 5 * 60;
 		burstCount = 0;
@@ -37,5 +38,3 @@ if (shoot) {
 		spd = defaultSpd;
 	}
 }
-
-color = c_purple;

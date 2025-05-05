@@ -5,5 +5,6 @@ function weapon_init(){
 	weapon_Felicius();
 	weapon_SingularitySplitter();
 	weapon_Majesty();
+	weapon_Minigun();
 	
 }

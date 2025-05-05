@@ -23,7 +23,7 @@
   ],
   "name":"sAlien",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"Alien Gun",
     "path":"folders/Sprites/weapons/Alien Gun.yy",
@@ -77,7 +77,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":6,
+    "xorigin":-8,
     "yorigin":5,
   },
   "swatchColours":null,

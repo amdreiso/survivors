@@ -2,6 +2,7 @@
 
 // Draw player
 draw();
+//drawWeapon();
 
 
 // Character's unique code

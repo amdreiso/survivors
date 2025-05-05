@@ -32,7 +32,6 @@ function explosion_set(x, y, range, damage, knockback = 10){
 			force.x -= lengthdir_x(knockback * knockbackFactor, dir);
 			force.y -= lengthdir_y(knockback * knockbackFactor, dir);
 		}
-		
 	}
 	
 	camera_shake(20 - (point_distance(x, y, Player.x, Player.y) / 10));

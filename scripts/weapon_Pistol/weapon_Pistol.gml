@@ -60,7 +60,8 @@ function weapon_Pistol(){
 
 		{
 			recoil: 6,
-			cadency: 50,
+			cadency: 30,
+			sprite: sPistol,
 			spriteGUI: sPistol_Icon,
 			range: 80,
 			
@@ -198,7 +199,12 @@ function weapon_Pistol(){
 					weaponRecoil = recoil;
 						
 					projectile_apply_effects(proj, weapon.components.effects);
-						
+					
+					// Player recoil
+					var playerRecoil = weapon.components.playerRecoil;
+					force.x = -lengthdir_x(playerRecoil, dir);
+					force.y = -lengthdir_y(playerRecoil, dir);
+					
 					camera_shake(weapon.components.cameraShake);
 				}
 			}
@@ -219,6 +225,8 @@ function weapon_Pistol(){
 			
 			cameraShake: 3.0,
 			isUnique: true,
+			
+			playerRecoil: 5,
 			
 			projectile: {
 				spd: 1.54,

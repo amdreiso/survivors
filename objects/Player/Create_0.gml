@@ -165,6 +165,8 @@ addItem = function(itemID) {
 }
 
 drawItemIcons = function() {
+	if (Paused) return;
+	
 	var len = array_length(items);
 	
 	for (var i = 0; i < len; i++) {
@@ -250,6 +252,7 @@ consumablesLogic = function() {
 }
 
 drawConsumables = function() {
+	if (Paused) return;
 	
 	var len = array_length(consumables);
 	var spriteGUI = sSlotIcon;
@@ -257,7 +260,7 @@ drawConsumables = function() {
 	for (var i = 0; i < len; i++) {
 		
 		var padding = 1.1;
-		var scale = 3;
+		var scale = Settings.graphics.guiScale;
 		
 		var size = sprite_get_width(spriteGUI) * scale;
 		var margin = (size div 2) + Style.marginGUI;
@@ -287,7 +290,7 @@ hands = [
 		weaponUpgrade: 0,
 	},
 	{
-		weaponID: -1,
+		weaponID: eWeaponID.Minigun,
 		weaponUpgrade: 0,
 	},
 ];
@@ -366,10 +369,12 @@ weaponCodeDraw = function() {
 
 // Draw the weapon interface
 drawWeaponGUI = function() {
+	if (Paused) return;
+	
 	var weapon = weapon_get(getHand().weaponID);
 	
 	var spriteGUI = sSlotIcon2;
-	var scale = 3;
+	var scale = Settings.graphics.guiScale;
 	
 	var width = sprite_get_width(spriteGUI) * scale;
 	var height = sprite_get_height(spriteGUI) * scale;
@@ -392,7 +397,6 @@ drawWeaponGUI = function() {
 		drawSprite = sprite;
 	}
 	
-	
 	//draw_sprite_ext(sSlotIcon2, 0, xx - width * offset, yy - height * offset, scale, scale, 0, c_white, 1);
 	
 	//draw_outline(drawSprite, xx, yy, scale, c_black, scale);
@@ -413,6 +417,10 @@ drawWeaponGUI = function() {
 
 // Unique weapon variables
 singularitySplitterShotCount = 0;
+
+minigunCooldown = 0;
+minigunOverheat = 0;
+minigunOverheated = false;
 
 
 // Health
@@ -455,7 +463,7 @@ hit = function(damage, e, shake = 4) {
 	hp -= d;
 	camera_shake(shake);
 	
-	hitCooldown = 1 * 60;
+	hitCooldown = 20;
 	isHit = true;
 	
 	// Knockback
@@ -509,10 +517,10 @@ drawDeadMenu = function() {
 		
 	}, BUTTON_ORIGIN.MiddleCenter);
 	
-	button_gui((w / 2) + buttonMargin, h / 2, 100, 64, "Retry", -1, true, Style.outlineColor, c_white, 0.1, alpha, function(){
+	button_gui((w / 2) + buttonMargin, h / 2, 100, 64, "bac", -1, true, Style.outlineColor, c_white, 0.1, alpha, function(){
 		
 		if (mouse_check_button_pressed(mb_left)) {
-			Level.restart();
+			room_goto(rmCharacterSelection);
 		}
 		
 	}, BUTTON_ORIGIN.MiddleCenter);
@@ -538,7 +546,7 @@ drawWeapon = function() {
 	
 	if (sprite == -1) return;
 	
-	var dir = 0;
+	var dir = point_direction(x, y, mouse_x, mouse_y);
 	
 	if (enemyClosest != -1 && enemyInRange) {
 		
@@ -557,7 +565,9 @@ drawWeapon = function() {
 	var xx = x - lengthdir_x(weaponRecoil, weaponAngle);
 	var yy = (y - sprite_get_height(sprite_index) / 2) - lengthdir_y(weaponRecoil, weaponAngle);
 	
+	surface_set_target(SurfaceHandler.surface);
 	draw_sprite_ext(sprite, 0, xx, yy, weaponXscale, weaponYscale, weaponAngle, c_white, 1);
+	surface_reset_target();
 }
 
 drawPlayer = true;
@@ -577,7 +587,10 @@ draw = function() {
 	sprite_index = sprite;
 	
 	if (drawPlayer) {
+		surface_set_target(SurfaceHandler.surface);
+		draw_clear_alpha(c_white, 0);
 		draw_self();
+		surface_reset_target();
 	}
 	
 	//drawWeapon();
@@ -717,41 +730,6 @@ drawLevelPrompt = function() {
 }
 
 tick = 0;
-
-
-// Debug
-dbg_view("Player", false);
-
-
-dbg_section("General", false);
-
-ref_characterID = ref_create(self, "characterID");
-dbg_slider_int(ref_characterID, 0, ds_map_size(CharacterData) - 1, "CharacterID: ");
-
-
-dbg_section("Health", false);
-
-dbg_button("die", function(){
-	isDead = true;
-});
-
-dbg_button("max life", function(){
-	hp = hpMax;
-});
-
-
-dbg_section("Weapon", false);
-
-handStruct0 = getHand(0);
-ref_handStruct0 = ref_create(self, "handStruct0");
-ref_handStructVar0 = ref_create(ref_handStruct0, "weaponID");
-
-handStruct1 = getHand(1);
-ref_handStruct1 = ref_create(self, "handStruct1");
-ref_handStructVar1 = ref_create(ref_handStruct1, "weaponID");
-
-dbg_slider_int(ref_handStructVar0, 0, ds_map_size(WeaponData) - 1, "WeaponID 0: ");
-dbg_slider_int(ref_handStructVar1, 0, ds_map_size(WeaponData) - 1, "WeaponID 1: ");
 
 
 addConsumable(eConsumableID.Granade);

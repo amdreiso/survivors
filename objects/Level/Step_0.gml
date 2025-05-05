@@ -15,8 +15,6 @@ if (enemySpawnTick >= enemySpawnTime && enemyCountIndex > 0) {
 	repeat(amount) spawnEnemy();
 }
 
-show_debug_message(enemyCountIndex div (enemyCountDefault/2));
-
 if (hasEnemies) {
 	hordeEndCooldown = 120;
 } else {

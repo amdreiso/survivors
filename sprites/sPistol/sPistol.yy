@@ -23,7 +23,7 @@
   ],
   "name":"sPistol",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"John",
     "path":"folders/Sprites/weapons/John.yy",
@@ -77,7 +77,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":4,
+    "xorigin":-8,
     "yorigin":2,
   },
   "swatchColours":null,

@@ -3,8 +3,6 @@ event_inherited();
 
 redirect ++;
 
-show_debug_message(redirect);
-
 if (redirect > 3) return;
 
 var range = 40;

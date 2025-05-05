@@ -16,6 +16,8 @@ function weapon_get_default_components(type) {
 				
 				projectileOffset: 0,
 				
+				playerRecoil: 0,
+				
 				cameraShake: 0,
 				cameraShakePower: 1,
 				

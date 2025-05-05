@@ -32,7 +32,7 @@ function consumable_init() {
 		}
 	});
 	
-	consumable_create(eConsumableID.Granade, "Granade", sConsumable_BlackPanty, sConsumable_BlackPantyHUD, function(obj) {
+	consumable_create(eConsumableID.Granade, "Granade", sConsumable_Grenade, sConsumable_BlackPantyHUD, function(obj) {
 		granade_throw(obj);
 	});
 	

@@ -8,8 +8,8 @@
   "name":"MechaNerd",
   "overriddenProperties":[],
   "parent":{
-    "name":"enemy stuff",
-    "path":"folders/Objects/enemy stuff.yy",
+    "name":"Nerd Group",
+    "path":"folders/Objects/enemy stuff/Nerd Group.yy",
   },
   "parentObjectId":{
     "name":"Enemy",

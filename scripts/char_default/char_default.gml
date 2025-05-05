@@ -96,6 +96,7 @@ function char_default(){
 							struct_merge(proj, projectileStats);
 					
 							proj.direction = dir * i;
+							proj.image_angle = proj.direction;
 							proj.target = eProjectileTarget.Enemy;
 							proj.damage = 25;
 							proj.lifeTime = 3 * 60;

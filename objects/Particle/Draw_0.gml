@@ -14,5 +14,8 @@ image_xscale = xscale * scale;
 image_yscale = yscale * scale;
 
 sprite_index = sprite;
+
+surface_set_target(SurfaceHandler.surface);
 draw_self();
+surface_reset_target();
 

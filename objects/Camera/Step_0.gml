@@ -4,7 +4,7 @@ if (target == noone) return;
 
 if (shakeValue > 0) shakeValue -= GameSpeed / 2; else shakeValue = 0;
 
-var shake = power(shakeValue, shakePower); /* Settings.graphics.cameraShakeIntensity */
+var shake = power(shakeValue, shakePower) * Settings.graphics.cameraShakeIntensity;
 
 var xx = target.x + offset.x;
 var yy = target.y + offset.y;
@@ -12,6 +12,7 @@ var yy = target.y + offset.y;
 x = lerp(x, xx, followSpeed) + random_range(-shake, shake);
 y = lerp(y, yy, followSpeed) + random_range(-shake, shake);
 
+angle = lerp(angle, angleTo, 0.1);
 
 camera_set_view_angle(cam, angle);
 camera_set_view_size(cam, defaultSize.width * zoomLerp, defaultSize.height * zoomLerp);

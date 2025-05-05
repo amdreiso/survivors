@@ -1,9 +1,7 @@
 
 function effect_data(){
-	
 	globalvar EffectData; 
 	EffectData = ds_map_create();
-	
 }
 
 function effect_create(effectID, name, load = function(){}, update = function(){}, destroy = function(obj){}) {

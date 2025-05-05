@@ -4,6 +4,8 @@ busy = (Paused || levelPrompt || isDead);
 color = c_white;
 
 
+
+
 // Movement
 handleMovement();
 
@@ -41,6 +43,18 @@ if (distance_to_object(Coin) < coinMagnetRange * coinMagnetMultiplier) {
 }
 
 
+if (place_meeting(x, y, EnemyProjectile) && hitCooldown == 0) {
+	var p = instance_nearest(x, y, EnemyProjectile);
+	var damage = p.damage;
+	
+	hit(damage, p);
+	
+	if (p.destructible) {
+		instance_destroy(p);
+	}
+}
+
+
 // Enemies
 if (enemyClosest != -1) {
 	if (getHand().weaponID == -1) return;
@@ -55,7 +69,6 @@ if (instance_exists(Enemy)) {
 } else {
 	enemyClosest = -1;
 }
-
 
 
 // Effects
@@ -74,11 +87,11 @@ consumablesLogic();
 character_get(characterID).update(self);
 
 
-
 // Garbage
-if (keyboard_check_pressed(ord("X"))) granade_throw(self);
+if (keyboard_check_pressed(ord("X"))) instance_create_depth(x, y, depth, Drop);
 
 
 
-
+x = clamp(x, 0, room_width);
+y = clamp(y, 0, room_height);
 

@@ -24,6 +24,8 @@ globalvar GameSpeed; GameSpeed = 1;
 globalvar Settings; Settings = {
 	graphics: {
 		maxParticlesOnScreen: 200,
+		cameraShakeIntensity: 1.0,
+		guiScale: 2.0,
 	},
 	
 	audio: {},

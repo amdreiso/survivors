@@ -17,7 +17,8 @@ function load_enums(){
 		BloodClaws,
 		Hairball,
 		SingularitySplitter,
-		Majesty
+		Majesty,
+		Minigun,
 	}
 	
 	enum eWeaponType {
